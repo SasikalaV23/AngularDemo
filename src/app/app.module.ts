@@ -17,6 +17,12 @@ import { DescriptionComponent } from './assignment/allcomponents/description/des
 import { DirectiveComponent } from './super-html/directive/directive.component';
 import { PipeComponent } from './super-html/pipe/pipe.component';
 import { BadrouteComponent } from './super-html/badroute/badroute.component';
+import { ConsumeparentComponent } from './consume/consumeparent/consumeparent.component';
+import { Consumechild1Component } from './consume/consumechild1/consumechild1.component';
+import { Consumechild2Component } from './consume/consumechild2/consumechild2.component';
+import { ChildComponent } from './consume/child/child.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -33,11 +39,16 @@ import { BadrouteComponent } from './super-html/badroute/badroute.component';
     DescriptionComponent,
     DirectiveComponent,
     PipeComponent,
-    BadrouteComponent
+    BadrouteComponent,
+    ConsumeparentComponent,
+    Consumechild1Component,
+    Consumechild2Component,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     RouterModule.forRoot([
       {
         path:'',
@@ -84,10 +95,27 @@ import { BadrouteComponent } from './super-html/badroute/badroute.component';
         component:PipeComponent
       },
       {
+        path:'consume',
+        component:ConsumeparentComponent,
+        children:[
+          {
+            path:'child1',
+            component:Consumechild1Component
+
+          },
+          {
+            path:'child2',
+            component:Consumechild2Component
+
+          }
+        ]
+      },
+      {
         path:'**',
         component:BadrouteComponent
       }
-    ])
+    ]),
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

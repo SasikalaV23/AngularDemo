@@ -1,0 +1,18 @@
+<div class="parent">
+  I am consume parent component!I have 2 child
+  Value of name in parent:  {{name}}
+<div>
+  <br>
+<div class="child">
+  I am child:<app-child [sendName]="name" (sendToParent)="receivedNewName($event)"></app-child>
+</div>
+
+
+
+  <br>
+  <br>
+  <a routerLink="child1"> Child 1</a> &nbsp;
+  <a routerLink="child2"> Child 2</a>
+  <br>
+  <br>
+  <router-outlet></router-outlet>
