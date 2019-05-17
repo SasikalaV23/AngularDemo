@@ -132,5 +132,17 @@
       }
     }
   },
-  "defaultProject": "angularsample"
+  "defaultProject": "angularsample",
+  "schematics": {
+    "@schematics/angualr": {
+      "component": {
+        "spec": false
+      }
+    },
+    "@schematics/angular": {
+      "component": {
+        "spec": true
+      }
+    }
+  }
 }

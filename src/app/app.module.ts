@@ -22,6 +22,11 @@ import { Consumechild1Component } from './consume/consumechild1/consumechild1.co
 import { Consumechild2Component } from './consume/consumechild2/consumechild2.component';
 import { ChildComponent } from './consume/child/child.component';
 import { FormsModule } from '@angular/forms';
+import { NospecComponent } from './delete/nospec/nospec.component';
+import { Nospec1Component } from './delete/nospec1/nospec1.component';
+import { Nospec2Component } from './delete/nospec2/nospec2.component';
+import { TemplateformComponent } from './Forms/templateform/templateform.component';
+import { ReactiveformComponent } from './Forms/reactiveform/reactiveform.component';
 
 
 @NgModule({
@@ -43,7 +48,12 @@ import { FormsModule } from '@angular/forms';
     ConsumeparentComponent,
     Consumechild1Component,
     Consumechild2Component,
-    ChildComponent
+    ChildComponent,
+    NospecComponent,
+    Nospec1Component,
+    Nospec2Component,
+    TemplateformComponent,
+    ReactiveformComponent
   ],
   imports: [
     BrowserModule,
@@ -110,6 +120,14 @@ import { FormsModule } from '@angular/forms';
           }
         ]
       },
+      {
+path:'template',
+component:TemplateformComponent
+      },
+      {
+        path:'reactive',
+        component:ReactiveformComponent
+              },
       {
         path:'**',
         component:BadrouteComponent
