@@ -3,8 +3,8 @@
   <br>
   <form #hobbyForm="ngForm" (ngSubmit)="submitDetails(hobbyForm)">
     <label contenteditable="true">Name:</label>
-    <input type="text" name="fn" [(ngModel)]="fullname" required pattern="[a-zA-Z]{3,65}">{{fullname}}
-    <span [ngStyle]="{color:hobbyForm.controls.fn.invalid?'red':'white'}">Minimum length is 3. Maximum length is 65,. Only Alphabets</span>
+    <input type="text" name="fn" [(ngModel)]="fullname" required pattern="[a-zA-Z]{3,10}">{{fullname}}
+    <span [ngStyle]="{color:hobbyForm.controls.fn.invalid?'red':'white'}">Minimum length is 3. Maximum length is 10,. Only Alphabets</span>
     <br>
       <label>Age:</label>
       <input type="number" name="ag" [(ngModel)]="age" required min="18" max="35">{{age}}
@@ -15,7 +15,8 @@
       <option value="hacking">Hacking</option>
       <option value="driving">Driving</option>
       <option value="trekking">trekking</option>
-    </select>{{hobby}}
+    </select>
+    {{hobby}}
   </form>
   <br>
   <button type="submit" [disabled]="hobbyForm.invalid">Submit</button>
